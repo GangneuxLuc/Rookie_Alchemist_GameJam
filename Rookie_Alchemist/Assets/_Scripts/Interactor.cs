@@ -11,6 +11,7 @@ public class Interactor : MonoBehaviour
     [Range(0, 100f)] public float interactorRange;
     LayerMask layerMask;
 
+    Coroutine coroutine;
     private void Awake()
     {
         layerMask = LayerMask.GetMask("Interactable");
@@ -20,22 +21,28 @@ public class Interactor : MonoBehaviour
 
     private void Update() // gros caca
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (coroutine == null && Input.GetKeyDown(KeyCode.E))
         {
-            Ray r = new Ray(interactorSource.position, interactorSource.forward * interactorRange);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, interactorRange, layerMask))
-                Debug.Log(hitInfo.collider.gameObject.name);
-                Debug.DrawRay(interactorSource.position, interactorSource.forward * interactorRange, Color.red, 1f);
-            {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    interactObj.Interact();
-                }
-            }
-           
+            coroutine = StartCoroutine(RayCast());
+            coroutine = null;
         }
     }
-
+    IEnumerator RayCast()
+    {
+      
+        Ray r = new Ray(interactorSource.position, interactorSource.forward * interactorRange);
+        if (Physics.Raycast(r, out RaycastHit hitInfo, interactorRange, layerMask))
+         Debug.Log(hitInfo.collider.gameObject.name);
+        Debug.DrawRay(interactorSource.position, interactorSource.forward * interactorRange, Color.red, 1f);
+        {
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            {
+                interactObj.Interact();
+            }
+        }
+       
+        yield return new WaitForSeconds(1f);
+    }
 
 
 }
