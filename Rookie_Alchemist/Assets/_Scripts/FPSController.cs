@@ -3,8 +3,6 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Camera _camera;
-    [SerializeField] Transform _transform;
     [SerializeField] Rigidbody rb;
 
     [Header("Input values")]
@@ -25,16 +23,6 @@ public class FPSController : MonoBehaviour
 
 
         Vector2 input = new Vector2(inputX, inputY); // Je cr�e un Vecteur2 qui prend en valeur les inputs du joueur
-        
-
-        //if (input.sqrMagnitude > 1f) input.Normalize();
-    
-
-       // transform.Translate(new Vector3( inputX, 0f, inputY) * speed * Time.deltaTime); // J'applique le d�placement
-      rb.linearVelocity = rb.transform.forward * inputY * speed + rb.transform.right * inputX * speed; // J'applique le d�placement
-
-
+        rb.linearVelocity = rb.transform.forward * inputY * speed + rb.transform.right * inputX * speed; // J'applique le d�placement
     }
-
-
 }
