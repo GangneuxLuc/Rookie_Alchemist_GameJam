@@ -704,30 +704,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9105742413212783761, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
   m_PrefabInstance: {fileID: 5636506613403091527}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &330585543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 465005174376211809, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-  m_PrefabInstance: {fileID: 5636506613403091527}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &330585546 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4867174610491386695, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-  m_PrefabInstance: {fileID: 5636506613403091527}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &330585549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8b1180acaea26147ac24d438b3697e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactor
-  interactorSource: {fileID: 330585546}
-  interactorRange: 36.7
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,33 +1017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectsToGather
   plateau: {fileID: 0}
   randomEmplacements: []
---- !u!1 &1345994444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2275940408353283102, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-  m_PrefabInstance: {fileID: 5636506613403091527}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1345994451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345994444}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1392665033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,22 +1416,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2275940408353283102, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3049097082265268137, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.557
-      objectReference: {fileID: 0}
-    - target: {fileID: 3049097082265268137, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 3049097082265268137, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.882
-      objectReference: {fileID: 0}
     - target: {fileID: 6935006224033659664, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.3492277
@@ -1530,13 +1463,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 465005174376211809, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 330585549}
-    - targetCorrespondingSourceObject: {fileID: 2275940408353283102, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1345994451}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a61897fa87ed0e745820e8a3dc4ba095, type: 3}
 --- !u!1001 &8676423516909961188
 PrefabInstance:
