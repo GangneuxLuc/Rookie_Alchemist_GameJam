@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 78912336}
   - component: {fileID: 78912335}
   - component: {fileID: 78912334}
+  - component: {fileID: 78912339}
   m_Layer: 0
   m_Name: Lampe (1)
   m_TagString: Interactable
@@ -259,6 +260,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78912339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78912333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9865d811d8cd8c84abcc3a2f9303ba7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectsToGather
+  plateau: {fileID: 0}
 --- !u!1 &139860119
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +420,7 @@ GameObject:
   - component: {fileID: 153228502}
   - component: {fileID: 153228501}
   - component: {fileID: 153228500}
+  - component: {fileID: 153228504}
   m_Layer: 0
   m_Name: w (2)
   m_TagString: Untagged
@@ -506,6 +521,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &153228504
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153228499}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 32
+  m_CollisionDetection: 0
 --- !u!1 &213588530
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactor
   interactorSource: {fileID: 330585546}
-  interactorRange: 73.9
+  interactorRange: 7.3
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1281,7 @@ Transform:
   m_GameObject: {fileID: 1295053017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.377, y: 0.95, z: 1.093}
+  m_LocalPosition: {x: 3.82, y: 0.95, z: 1.093}
   m_LocalScale: {x: 1, y: 1.8728285, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1257,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9865d811d8cd8c84abcc3a2f9303ba7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectsToGather
+  plateau: {fileID: 0}
 --- !u!1 &1345994444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1345994446
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1409,8 +1452,8 @@ GameObject:
   - component: {fileID: 1382034618}
   - component: {fileID: 1382034617}
   - component: {fileID: 1382034616}
-  - component: {fileID: 1382034621}
   - component: {fileID: 1382034622}
+  - component: {fileID: 1382034623}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1508,38 +1551,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.025991427, z: -0, w: 0.99966216}
   m_LocalPosition: {x: -2.3492277, y: 1.3, z: -0.0005001426}
-  m_LocalScale: {x: 1, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   - {fileID: 1345994448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -2.979, z: 0}
---- !u!143 &1382034621
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382034615}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1382034622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,8 +1572,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
   _camera: {fileID: 0}
   _transform: {fileID: 1382034619}
-  _rigidbody: {fileID: 0}
+  rb: {fileID: 1382034623}
   speed: 3
+--- !u!54 &1382034623
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382034615}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1392665033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,7 +1893,7 @@ ConfigurableJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834353855}
   serializedVersion: 4
-  m_ConnectedBody: {fileID: 1345994450}
+  m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
