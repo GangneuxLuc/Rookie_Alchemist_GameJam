@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 780495942788218236}
   - component: {fileID: 1702192623662976181}
   - component: {fileID: 2145571382868736663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEmplacement6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 5746409718262052431}
   - component: {fileID: 3976106268938054570}
   - component: {fileID: 6918117139189574243}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEmplacement2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 837472328644054057}
   - component: {fileID: 6674083767247006157}
   - component: {fileID: 2521731509902344192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEmplacement4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 2450828900980116420}
   - component: {fileID: 1518580557999636482}
   - component: {fileID: 8675203434756347692}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEmplacement 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,8 +639,9 @@ GameObject:
   - component: {fileID: 4759800936533065460}
   - component: {fileID: 857907604557906365}
   - component: {fileID: 2129673443885162410}
-  m_Layer: 0
-  m_Name: Cylinder
+  - component: {fileID: 8899054508968178877}
+  m_Layer: 3
+  m_Name: Plateau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,10 +747,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!64 &2129673443885162410
 MeshCollider:
@@ -770,9 +771,21 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8899054508968178877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275940408353283102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa67df515efa0c40b12a681dfe7560e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &3910901307984440320
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +798,7 @@ GameObject:
   - component: {fileID: 1272840766522032695}
   - component: {fileID: 5166405681030581852}
   - component: {fileID: 6253195477080924146}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RnadomEmplacement5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +912,7 @@ GameObject:
   - component: {fileID: 427000152926959420}
   - component: {fileID: 6379712731002851691}
   - component: {fileID: 1289615571682095568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEmplacement3S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,6 +1027,7 @@ GameObject:
   - component: {fileID: 1642978524079906609}
   - component: {fileID: 5337087008992707278}
   - component: {fileID: 8371431765297302581}
+  - component: {fileID: 1336358757641696092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1130,5 +1144,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618963024994c64cad8155b9fbb5e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
-  rb: {fileID: 0}
+  rb: {fileID: 1336358757641696092}
   speed: 3
+--- !u!54 &1336358757641696092
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387932061967106413}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
