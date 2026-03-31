@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 468574787924107991}
   - component: {fileID: 917922019710105941}
   - component: {fileID: 3415312263295095369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Objet
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.91, y: 2.335, z: -0.1816}
-  m_LocalScale: {x: 0.42548, y: 0.7968511, z: 0.42548}
+  m_LocalScale: {x: 0.2223984, y: 0.33665168, z: 0.2223984}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -154,4 +154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectsToGather
   plateau: {fileID: 0}
-  randomEmplacements: []
+  rbPlateau: {fileID: 0}
+  randomEmplacements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  height: 0.25
