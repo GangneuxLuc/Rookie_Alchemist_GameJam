@@ -12,13 +12,22 @@ public class FPSController : MonoBehaviour
     [Header("Player Stats")]
     [Range(0, 10f)] public float speed;
     float maxMovementSpeed = 10f;
+    [Range(0, 10f)] public float jumpForce;
 
+
+    private Vector3 lastPos;
+    private Vector3 currentPos;
     private void Update()
     {
         Movement();
     }
     void Movement() // M�thode pour faire bouger le joueur.
     {
+        lastPos = currentPos;
+        currentPos = new Vector3(transform.position.x, rb.linearVelocity.y, transform.position.z) ;
+
+
+
         inputX = Input.GetAxisRaw("Horizontal");
         inputZ = Input.GetAxisRaw("Vertical");
 
@@ -31,7 +40,9 @@ public class FPSController : MonoBehaviour
         horizontalVelocity.y = 0.0f; //Je met l'axe Y de la vitesse actuelle du joueur à 0 pour ne pas changer la vitesse verticale du joueur 
         rb.AddForce(transform.TransformDirection(targetVelocity) * (1 - (horizontalVelocity.magnitude / maxMovementSpeed))); //J'ajoute une force au joueur en accordant le déplacement à son orientation et en réduisant la force à mesure que sa vitesse actuelle approche de sa vitesse maximale.
 
-        // envoyer sa linearVelocity au PLateau
-        // Le plateau va redistribuer la vélocité et il prend la direction du joueur
+        if (currentPos.y != lastPos.y) // Si le joueur monte, je lui applique une force pour qu'il puisse gravir les obstacles.
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 }

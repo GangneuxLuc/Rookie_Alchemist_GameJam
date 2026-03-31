@@ -7,7 +7,8 @@ public class interactionDetection : MonoBehaviour
     {
         if (other.tag == "Interactable")
         {
-            Debug.Log("détection");
+            // On fait appraitre une UI pour indiquer que l'objet est interactable
+            // Debug.Log("détection");
             if (Input.GetKey(KeyCode.E))
             {
                 // ObjectsToGather script = other.gameObject.GetComponent<ObjectsToGather>().Interact();

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,53 +6,67 @@ public class ObjectsToGather : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] Rigidbody rbPlateau;
-    public plateauList plateauList;
-    private EmplacementCheck check;
+    public plateauManager plateauManager;
 
     public List<Transform> _List;
 
-    [Tooltip(" Les différents points où les pobjets peuvent atterir sur le plateau quand on les récupère.")]
-    [Header("Random Emplacement")]
+    bool canInteract = true;
     public float height;
 
 
-
-   
-
+    public bool isPlaced = false; // Indique si l'objet est actuellement placé sur le plateau
     private void Awake()
     {
-        plateauList = GameObject.FindWithTag("Plateau").GetComponent<plateauList>();
-       
+        plateauManager = GameObject.FindWithTag("Plateau").GetComponent<plateauManager>();
     }
 
     private void Start()
     {
-        _List = GameObject.FindWithTag("Plateau").GetComponent<plateauList>().checkList;
-
+        if (plateauManager != null)
+            _List = plateauManager.emplacementList;
     }
 
-    // je fais une liste que je mets à jour quand un objet rentre dedans.
-
-    // Quand je récupère un objet, il s'abonne à la liste et son emplacement sur le plateau devient occupé, empêchant un nouvel objet de pouvoir apparaître au même endroit
-
+    // Lors d'une interaction, on demande au plateau de placer l'objet en respectant l'occupation.
     public void Interact()
     {
-        // Faire une UI qui signale une interaction possible lorsqu'on est assez proche de l'objet
-        //transform.position = Emplacements[Random.Range(0, Emplacements.Length)].position + Vector3.up * height;  
-        transform.position = _List[0].position;
-       
+        if (plateauManager == null)
+        {
+            return;
+        }
+        if (canInteract)
+        {
+            isPlaced = plateauManager.TryPlace(this);
+            canInteract = false;
+            if (!isPlaced)
+            {
+                Debug.Log("Aucun emplacement libre sur le plateau.");
+            }
+        }
+        else return;
     }
-
 
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.F))
-       {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
             Interact();
-            
-                
-       }
-            
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision) // Quand on rentre en collision, si on n'est plus placé sur le plateau, on lance DestroyObj
+    {
+        if (!isPlaced && !canInteract && !collision.gameObject.CompareTag("Plateau")) 
+        {
+            Debug.Log("Destruction de l'objet");
+            StartCoroutine(DestroyObj());
+        }
+    }
+
+    private IEnumerator DestroyObj() // Comportement pour jouer les FX, désactiver le meshRenderer et la collision puis de mettre à jour l'UI avant de détruir l'objet
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
 
