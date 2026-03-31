@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class EmplacementCheck : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool bOccupied;
 
-    // Update is called once per frame
-    void Update()
+
+    
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Interactable")
+        {
+            bOccupied = true;
+        }
     }
 }
