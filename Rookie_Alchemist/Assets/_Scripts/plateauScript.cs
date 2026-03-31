@@ -9,6 +9,7 @@ public class plateauScript : MonoBehaviour
     private Transform cam;
     public float smooth = 5f;
     public float distanceFromCamera = 2f;
+    public float distanceRightFromCamera;
     void Awake()
     {
         if (cam == null)
@@ -19,7 +20,7 @@ public class plateauScript : MonoBehaviour
 
     void Update()
     {
-        Vector3 targetPosition = cam.position + cam.forward * distanceFromCamera; // Position du plateau devant la caméra
+        Vector3 targetPosition = cam.position + (cam.forward * distanceFromCamera) + (cam.right * distanceRightFromCamera) ; // Position du plateau devant la caméra
         Quaternion targetRotation = Quaternion.LookRotation(cam.forward); // Rotation du plateau pour faire face à la caméra
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smooth); // Lerp pour un mouvement fluide
 

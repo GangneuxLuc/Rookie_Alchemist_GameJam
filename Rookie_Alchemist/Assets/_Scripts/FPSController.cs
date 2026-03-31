@@ -30,5 +30,8 @@ public class FPSController : MonoBehaviour
         Vector3 horizontalVelocity = rb.linearVelocity; // Je crée un Vecteur3 qui prend en valeur la vitesse actuelle du joueur.
         horizontalVelocity.y = 0.0f; //Je met l'axe Y de la vitesse actuelle du joueur à 0 pour ne pas changer la vitesse verticale du joueur 
         rb.AddForce(transform.TransformDirection(targetVelocity) * (1 - (horizontalVelocity.magnitude / maxMovementSpeed))); //J'ajoute une force au joueur en accordant le déplacement à son orientation et en réduisant la force à mesure que sa vitesse actuelle approche de sa vitesse maximale.
+
+        // envoyer sa linearVelocity au PLateau
+        // Le plateau va redistribuer la vélocité et il prend la direction du joueur
     }
 }

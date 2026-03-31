@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9865d811d8cd8c84abcc3a2f9303ba7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectsToGather
-  plateau: {fileID: 0}
   rbPlateau: {fileID: 0}
   randomEmplacements:
   - {fileID: 0}
