@@ -20,14 +20,6 @@ public class Interactor : MonoBehaviour
 
     private void Update() // gros caca
     {
-<<<<<<< Updated upstream
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray r = new Ray(interactorSource.position, interactorSource.forward * interactorRange);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, interactorRange, layerMask))
-                Debug.Log(hitInfo.collider.gameObject.name);
-                Debug.DrawRay(interactorSource.position, interactorSource.forward * interactorRange, Color.red, 1f);
-=======
        /* if (coroutine == null && Input.GetKeyDown(KeyCode.E))
         {
             coroutine = StartCoroutine(RayCast());
@@ -62,15 +54,14 @@ public class Interactor : MonoBehaviour
         Debug.DrawRay(interactorSource.position, interactorSource.forward * interactorRange, Color.red, 1f);
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
->>>>>>> Stashed changes
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    interactObj.Interact();
-                }
+                
+                  interactObj.Interact();
+                
             }
            
         }
+        yield return new WaitForSeconds(1f);
     }
 
 
