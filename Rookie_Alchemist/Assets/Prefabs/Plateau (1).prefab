@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 255484876065418987}
   - component: {fileID: 8765923074647075656}
   - component: {fileID: 7942500300317338795}
+  - component: {fileID: -5593623538811512795}
   m_Layer: 3
   m_Name: Plateau (1)
   m_TagString: Untagged
@@ -632,6 +633,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   smooth: 5
   distanceFromCamera: 2.5
+  distanceRightFromCamera: 0
+--- !u!114 &-5593623538811512795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029874943209961633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dbf700184919943a8347eea903159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &6766684562037079507
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ public class plateauScript : MonoBehaviour
     private Vector3 initialLocalScale;
     private Transform cam;
     public float smooth = 5f;
-    public float distanceFromCamera = 2f;
-    public float distanceRightFromCamera;
+    [Range(0, 10f)] public float distanceFromCamera = 2f;
+    [Range(0, 10f)] public float distanceRightFromCamera;
     void Awake()
     {
         if (cam == null)
@@ -20,7 +20,7 @@ public class plateauScript : MonoBehaviour
 
     void Update()
     {
-        Vector3 targetPosition = cam.position + (cam.forward * distanceFromCamera) + (cam.right * distanceRightFromCamera) ; // Position du plateau devant la caméra
+        Vector3 targetPosition = cam.position + (cam.forward * distanceFromCamera) + (cam.right * distanceRightFromCamera); // Position du plateau devant la caméra
         Quaternion targetRotation = Quaternion.LookRotation(cam.forward); // Rotation du plateau pour faire face à la caméra
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smooth); // Lerp pour un mouvement fluide
 
