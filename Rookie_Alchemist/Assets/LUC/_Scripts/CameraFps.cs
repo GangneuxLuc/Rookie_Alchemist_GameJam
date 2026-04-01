@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraFps : MonoBehaviour
 {
@@ -28,8 +29,20 @@ public class CameraFps : MonoBehaviour
     }
     void MouseLook() // Méthode pour gérer la rotation de la caméra grâce au mouvement de la souris en X et en Y
     {
-        mouseY = Input.GetAxis("Mouse Y");
-        mouseX = Input.GetAxis("Mouse X");
+        if (Gamepad.all.Count != 0)
+        {
+            mouseY = -Input.GetAxis("rStickV");
+            mouseX = Input.GetAxis("rStickH");
+        }
+        else
+        {
+            mouseY = Input.GetAxis("Mouse Y");
+            mouseX = Input.GetAxis("Mouse X");
+        }
+
+       
+
+       
 
         rotationY -= mouseY * sensitivityY;
         rotationX += mouseX * sensitivityX;

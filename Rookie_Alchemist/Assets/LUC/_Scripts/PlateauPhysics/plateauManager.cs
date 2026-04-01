@@ -69,7 +69,6 @@ public class plateauManager : MonoBehaviour
            // rbObj.linearVelocity = speed;
             //rbObj.AddForceAtPosition(speed * rbObj.mass, other.ClosestPoint(transform.position), ForceMode.Impulse);
             rbObj.AddRelativeForce(speed * rbObj.mass * forceMultiplier, ForceMode.Impulse);
-            Debug.Log(speed);
 
 
         }

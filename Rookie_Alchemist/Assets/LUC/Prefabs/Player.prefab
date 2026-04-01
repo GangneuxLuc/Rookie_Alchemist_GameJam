@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630288189475988570}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -429,6 +429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
   rb: {fileID: 3831658396572779505}
   speed: 3.04
+  jumpForce: 0.18
+  jtest: 0
 --- !u!54 &3831658396572779505
 Rigidbody:
   m_ObjectHideFlags: 0
