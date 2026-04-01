@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class mainscriptcube : MonoBehaviour
 {
@@ -20,10 +21,17 @@ public class mainscriptcube : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            mainscriptanimation mainanim = player.GetComponent<mainscriptanimation>();
-            mainanim.animationlance();
-            SceneManager.LoadScene("END");
+
+            StartCoroutine(LoadEnd());
 
         }
+    }
+
+    IEnumerator LoadEnd()
+    {
+        mainscriptanimation mainanim = player.GetComponent<mainscriptanimation>();
+        mainanim.animationlance();
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("END");
     }
 }

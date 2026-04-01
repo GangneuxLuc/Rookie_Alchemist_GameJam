@@ -42,7 +42,7 @@ public class FPSController : MonoBehaviour
         var targetVelocity = input * speed; // Je crée un Vecteur3 qui prend en valeur la direction et la vitesse que le joueur doit atteindre en fonction de ses inputs et de sa vitesse maximale.
         Vector3 horizontalVelocity = rb.linearVelocity; // Je crée un Vecteur3 qui prend en valeur la vitesse actuelle du joueur.
         horizontalVelocity.y = 0.0f; //Je met l'axe Y de la vitesse actuelle du joueur à 0 pour ne pas changer la vitesse verticale du joueur 
-        rb.AddForce(transform.TransformDirection(targetVelocity) * (1 - (horizontalVelocity.magnitude / maxMovementSpeed))* Time.deltaTime); //J'ajoute une force au joueur en accordant le déplacement à son orientation et en réduisant la force à mesure que sa vitesse actuelle approche de sa vitesse maximale.
+        rb.AddForce(transform.TransformDirection(targetVelocity) * (1 - (horizontalVelocity.magnitude / maxMovementSpeed))); //J'ajoute une force au joueur en accordant le déplacement à son orientation et en réduisant la force à mesure que sa vitesse actuelle approche de sa vitesse maximale.
 
 
         if (delta.y > 0.01 && delta.y < 0.02) // Si le joueur monte, je lui applique une force pour qu'il puisse gravir les obstacles.
