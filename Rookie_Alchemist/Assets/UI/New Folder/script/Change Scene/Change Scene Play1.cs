@@ -16,6 +16,6 @@ public class ChangeScenePlay1 : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("aIMOUT");
+        SceneManager.LoadScene("GAME");
     }
 }

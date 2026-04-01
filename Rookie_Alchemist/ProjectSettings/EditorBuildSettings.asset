@@ -5,16 +5,20 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-<<<<<<< HEAD
   - enabled: 0
     path: Assets/Scenes/TestScene.unity
-=======
-  - enabled: 1
-    path: Assets/Oceane frsh/Scenes/OCEANE_props.unity
->>>>>>> Océane
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: db8309f2b8459d7488cd58327fff7be2
+  - enabled: 1
+    path: Assets/Rendu/Scenes/TitleScene.unity
+    guid: 479bea5ecbb05e344ab4939407e48759
+  - enabled: 1
+    path: Assets/Rendu/Scenes/GAME.unity
+    guid: 16f7b19927cefd549a955258e457f04b
+  - enabled: 1
+    path: Assets/Rendu/Scenes/END.unity
+    guid: 407f1bad190302644964adb84a59b902
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

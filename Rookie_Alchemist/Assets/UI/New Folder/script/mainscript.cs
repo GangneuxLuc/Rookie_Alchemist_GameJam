@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mainscriptcube : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class mainscriptcube : MonoBehaviour
         {
             mainscriptanimation mainanim = player.GetComponent<mainscriptanimation>();
             mainanim.animationlance();
+            SceneManager.LoadScene("END");
+
         }
     }
 }
