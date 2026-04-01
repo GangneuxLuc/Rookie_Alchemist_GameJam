@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FPSController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class FPSController : MonoBehaviour
     [Range(0, 10f)] public float jumpForce;
 
 
+    public float jtest;
     private Vector3 lastPos;
     private Vector3 currentPos;
     private void Update()
@@ -24,8 +26,10 @@ public class FPSController : MonoBehaviour
     void Movement() // M�thode pour faire bouger le joueur.
     {
         lastPos = currentPos;
-        currentPos = new Vector3(transform.position.x, rb.linearVelocity.y, transform.position.z) ;
+        currentPos = new Vector3(transform.position.x, transform.position.y, transform.position.z) ;
+        Vector3 delta = currentPos - lastPos ;
 
+       // Debug.Log(delta.y);
 
 
         inputX = Input.GetAxisRaw("Horizontal");
@@ -40,9 +44,15 @@ public class FPSController : MonoBehaviour
         horizontalVelocity.y = 0.0f; //Je met l'axe Y de la vitesse actuelle du joueur à 0 pour ne pas changer la vitesse verticale du joueur 
         rb.AddForce(transform.TransformDirection(targetVelocity) * (1 - (horizontalVelocity.magnitude / maxMovementSpeed))); //J'ajoute une force au joueur en accordant le déplacement à son orientation et en réduisant la force à mesure que sa vitesse actuelle approche de sa vitesse maximale.
 
-        if (currentPos.y != lastPos.y) // Si le joueur monte, je lui applique une force pour qu'il puisse gravir les obstacles.
+
+        if (delta.y > 0.01 && delta.y < 0.02) // Si le joueur monte, je lui applique une force pour qu'il puisse gravir les obstacles.
         {
+            Debug.Log("On applique la force");
+           
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Mathf.Clamp(rb.linearVelocity.y, 0f, jumpForce);
+            Debug.Log(rb.linearVelocity.y);
+            
         }
     }
 }

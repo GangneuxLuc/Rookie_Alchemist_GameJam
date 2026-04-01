@@ -22,7 +22,7 @@ public class plateauManager : MonoBehaviour
     public List<ObjectsToGather> objectList;
     public List<Transform> emplacementList;
 
-    public float forceMultiplier = 1f; // Multiplieur de force pour ajuster la force appliquée aux objets
+    [Range(-10f, 10f)]public float forceMultiplier = 1f; // Multiplieur de force pour ajuster la force appliquée aux objets
     public float heightOffset = 0.5f; // Hauteur à laquelle les objets seront placés au-dessus du plateau
 
     private void Awake()
